@@ -15,3 +15,6 @@
 # npm install mongoose
  
 # npm i express-session connect-mongo connect-flash
+# npm install express-ejs-layouts
+
+# node server.js
