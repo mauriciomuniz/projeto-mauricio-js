@@ -16,5 +16,5 @@
  
 # npm i express-session connect-mongo connect-flash
 # npm install express-ejs-layouts
-
+# npm run dev
 # node server.js
