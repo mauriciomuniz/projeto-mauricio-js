@@ -1,4 +1,4 @@
-exports.paginaInicial = (req,res) =>{
+exports.index = (req,res) =>{
     res.render('index',{
         titulo:'Aqui o titulo da página',
         numero: [1,2,3,4,5,6,7,8,9]

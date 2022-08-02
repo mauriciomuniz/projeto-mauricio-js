@@ -15,9 +15,10 @@ exports.outroMiddleware = (req,res,next)=>{
 }
 
 exports.checkCsrfError = (err,req,res,next)=>{
-    if(err && 'EBADCSRFTOKEN' === err.code ){
+    if(err){
         return res.render('deuRuim');
     }
+    next();
 }
 
 exports.csrfMiddleware = (req, res, next) => {
