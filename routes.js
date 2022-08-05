@@ -13,6 +13,7 @@ route.post('/', homeController.recebeInicial);
 //  route.get('/pagina', pagina.paginaInicial);
 
 route.get('/login/index', loginController.index);
+route.post('/login/register', loginController.register);
 
 
 module.exports = route;
