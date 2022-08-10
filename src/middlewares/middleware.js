@@ -1,8 +1,6 @@
 exports.middlewareGlobal = (req,res,next)=>{
-    res.locals.variavelLocal = 'aqui a variavel';
-    if(req.body.cliente){
-        console.log(`pegou o dado ${req.body.cliente}`);
-    }
+    res.locals.errors = req.flash('errors');
+    res.locals.sucess = req.flash('sucess');
     next();
 };
 

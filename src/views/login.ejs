@@ -8,10 +8,14 @@
       <h1 class="text-center">Criar conta ou Entrar</h1>
       <p class="text-center lead">Login ou Criação de conta</p>
 
+      <%- include('includes/messages');%> 
+
       <div class="row">
         <div class="col-lg">
           <h4 class="text-center" >Fazer Cadastro</h4>
           <p>Se você ainda não tem um cadastro, preencha abaixo:</p>
+
+          
 
           <form action="/login/register" method="POST">
             <input type="hidden" name="_csrf" value=<%=csrfToken%> >

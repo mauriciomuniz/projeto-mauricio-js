@@ -1,18 +1,33 @@
-const login = require ('../models/LoginModel')
+const Login = require ('../models/LoginModel')
 
 exports.index = (req,res) =>{
     res.render('login');
 };
 
-exports.register = async (req,res) =>{
-    const login = new Login(req.body);
-    await login.register();
-    if(login.errors.legth > 0){
-        req.flash('errors',login.errors);
+try{
+    exports.register = async (req,res) =>{
+        const login = new Login(req.body);
+        await login.register();
+
+        console.log('passa')
+
+        if(login.errors.length > 0){
+            req.flash('errors',login.errors);
+            req.session.save(function(){
+                return res.redirect('../login/index');
+            });
+            return;
+        }
+
+        req.flash('sucess','seu usuario foi criado com sucesso');
         req.session.save(function(){
-            return res.redirect('back');
+            return res.redirect('../login/index');
         });
-        return;
-    }
-    res.send(login.user);
-};
+
+    };
+}catch(e){
+    console.log(e);
+    return  res.render('deuRuim')
+
+}
+
