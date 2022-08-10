@@ -7,14 +7,11 @@
 # para funcionar precisa instalar os pacotes do node
 
 # npm i
-
 # npm install express
-
 # npm i ejs
-
 # npm install mongoose
- 
 # npm i express-session connect-mongo connect-flash
 # npm install express-ejs-layouts
 # npm run dev
+# npm i bcrypt
 # node server.js
