@@ -3,9 +3,9 @@ const Login = require ('../models/LoginModel')
 exports.index = (req,res) =>{
     res.render('login');
 };
+exports.register = async (req,res) =>{
 
-try{
-    exports.register = async (req,res) =>{
+        try{
         const login = new Login(req.body);
         await login.register();
 
@@ -19,15 +19,14 @@ try{
             return;
         }
 
-        req.flash('sucess','seu usuario foi criado com sucesso');
+        req.flash('success','Seu usuário foi criado com sucesso.');
         req.session.save(function(){
             return res.redirect('../login/index');
         });
 
+        }catch(e){
+            console.log(e);
+            return  res.render('deuRuim')
+
+        }
     };
-}catch(e){
-    console.log(e);
-    return  res.render('deuRuim')
-
-}
-
