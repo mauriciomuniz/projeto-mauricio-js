@@ -49,4 +49,9 @@ Contato.prototype.cleanUp= function(){
     };
 };
 
+Contato.buscaPorId = async(id)=>{
+    if(typeof id !== 'string') return;
+    const contato = await ContatoModel.findById(id)
+    return contato;
+}
 module.exports = Contato;
