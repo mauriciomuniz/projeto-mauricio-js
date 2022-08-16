@@ -1,13 +1,6 @@
-exports.index = (req,res) =>{
-    res.render('index',{
-        titulo:'Aqui o titulo da página',
-        numero: [1,2,3,4,5,6,7,8,9]
-    });
-    return
-};
+const Contato = require('../models/ContatoModel')
 
-exports.recebeInicial= (req,res)=>{
-    res.send(req.body);
-    return;
+exports.index = async (req,res) =>{
+    const contatos = await Contato.buscaContatos();
+    res.render('index',{contatos});
 };
-
