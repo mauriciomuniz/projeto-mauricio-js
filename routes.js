@@ -5,12 +5,11 @@ const loginController = require('./src/controllers/loginController')
 const contatoController = require('./src/controllers/contatoController')
 
 const {loginRequired} = require('./src/middlewares/middleware');
-//const pagina = require('./src/controllers/pagina')
 
 
 //rota da pagina inicial
 route.get('/', homeController.index);
-route.post('/', homeController.recebeInicial);
+//route.post('/', homeController.recebeInicial);
 
 //rota de login
 route.get('/login/index', loginController.index);
