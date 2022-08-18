@@ -60,3 +60,15 @@ exports.edit = async (req,res)=>{
     
 
 }
+
+exports.delete = async function(req,res){
+    if(!req.params.id) return res.render('deuRuim');
+
+    const contato = await Contato.delete(req.params.id);
+    if(!contato) return res.render('deuRuim');
+
+    req.flash('success', 'contato apagado com sucesso');
+    req.session.save(()=>res.redirect(`back`));
+    return;
+    
+}
