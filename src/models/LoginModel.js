@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-//const { register } = require('../controllers/loginController');
+// const { register } = require('../controllers/loginController');
 const validator = require('validator');
 const bcryptjs = require('bcryptjs');
 
@@ -45,7 +45,7 @@ class Login{
 
         const salt = bcryptjs.genSaltSync();
         this.body.password = bcryptjs.hashSync(this.body.password, salt);
-
+        this.user = await LoginModel.create(this.body);
         
     }
     
