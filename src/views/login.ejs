@@ -4,61 +4,58 @@
 <div class="container">
   <div class = "row">
     <div class = "col-lg-2"></div>
-    <div class = "col-lg-8 my-3">
-      <h1 class="text-center">Criar conta ou Entrar</h1>
-      <p class="text-center lead">Login ou Criação de conta</p>
+      <div class = "col-lg-8 my-3">
+        <h1 class="text-center">Criar conta ou Entrar</h1>
+        <p class="text-center lead">Login ou Criação de conta</p>
 
-      <%- include('includes/messages');%> 
+        <%- include('includes/messages');%> 
 
-      <div class="row">
-        <div class="col-lg">
-          <h4 class="text-center" >Fazer Cadastro</h4>
-          <p>Se você ainda não tem um cadastro, preencha abaixo:</p>
+        <div class="row">
+          <div class="col-lg">
+            <h4 class="text-center" >Fazer Cadastro</h4>
+            <p>Se você ainda não tem um cadastro, preencha abaixo:</p>
 
-          
+            
 
-          <form action="/login/register" method="POST">
-            <input type="hidden" name="_csrf" value=<%=csrfToken%> >
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email:</label>
-              <input type="email" class="form-control"  name="email"
-               placeholder="Digite seu Email">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Digite sua senha</label>
-              <input type="password" class="form-control"  name="password"
-               placeholder="Crie sua senha">
-            </div>
-            <button type="submit" class="btn btn-primary">Criar minha conta</button>
-          </form>
+            <form class="form-register" action="/login/register" method="POST">
+              <input type="hidden" name="_csrf" value=<%=csrfToken%> >
+              <div class="form-group">
+                <label>Email:</label>
+                <input type="email" class="form-control"  name="email">
+              </div>
+              <div class="form-group">
+                <label>Digite sua senha</label>
+                <input type="password" class="form-control"  name="password">
+              </div>
+              <button type="submit" class="btn btn-primary">Criar minha conta</button>
+            </form>
+
+          </div>
+
+          <div class="col-lg">
+            <h4 class="text-center" >Fazer Login</h4>
+            <p>Caso já possua um cadastro, faça login abaixo:</p>  
+
+            <form class="form-login" action="/login/login" method="POST" >
+              <input type="hidden" name="_csrf" value=<%=csrfToken%> >
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email:</label>
+                <input type="email" class="form-control" name="email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Digite sua senha</label>
+                <input type="password" class="form-control"  name="password">
+              </div>
+              <button type="submit" class="btn btn-primary">Entrar</button>
+            </form>
+
+          </div>
 
         </div>
 
-        <div class="col-lg">
-          <h4 class="text-center" >Fazer Login</h4>
-          <p>Caso já possua um cadastro, faça login abaixo:</p>   
-          <form action="/login/login" method="POST" >
-            <input type="hidden" name="_csrf" value=<%=csrfToken%> >
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email:</label>
-              <input type="email" class="form-control" name="email"
-               placeholder="Digite seu Email">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Digite sua senha</label>
-              <input type="password" class="form-control"  name="password"
-               placeholder="Digite sua senha">
-            </div>
-            <button type="submit" class="btn btn-primary">Entrar</button>
-          </form>
-
-        </div>
+      
 
       </div>
-
-      </div>
-
-    </div>
     <div class = "col-lg-2"></div>
   </div>
 

@@ -11,7 +11,6 @@ exports.register = async (req,res) =>{
         const login = new Login(req.body);
         await login.register();
 
-        console.log('passa')
 
         if(login.errors.length > 0){
             req.flash('errors',login.errors);
@@ -38,8 +37,6 @@ exports.login = async (req,res) =>{
         try{
         const login = new Login(req.body);
         await login.login();
-
-        console.log('passa')
 
         if(login.errors.length > 0){
             req.flash('errors',login.errors);
