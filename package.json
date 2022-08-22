@@ -33,6 +33,7 @@
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
+    "babel-install": "2.1.0",
     "babel-loader": "^8.0.6",
     "nodemon": "^2.0.19",
     "webpack": "^4.46.0",

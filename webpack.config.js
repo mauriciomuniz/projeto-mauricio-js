@@ -8,11 +8,6 @@ module.exports = {
     filename: 'bundle.js'
   },
 
-  // performance: {
-  //   maxAssetSize:1000000000000,
-  //   maxEntrypointSize: 40000000000,
-  //   hints: 'warning'
-  // },
   stats: {
     warningsFilter: ['filter', /filter/, (warning) => true],
   },
@@ -28,10 +23,6 @@ module.exports = {
         }
       }
     }
-     //{
-    //   test: /\.css$/,
-    //   use: ['style-loader', 'css-loader']
-    // }
   ]
   },
   devtool: 'source-map'
